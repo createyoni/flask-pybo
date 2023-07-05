@@ -1,0 +1,14 @@
+/*h1{ color:rgba(255, 99, 71, 0.5);}
+
+textarea{
+    width:100%;
+}
+
+input[tyoe=submit]{
+    margin-top:10px;
+}*/
+
+.comment {
+    border-top:dotted 1px #ddd;
+    font-size:0.7em;
+}

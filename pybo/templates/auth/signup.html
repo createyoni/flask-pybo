@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+    <div class="container my-3">
+        <form method="post" class="post-form"><!--method 빠지지 않게 주의-->
+            {{ form.csrf_token }}<!--매크로인지 확인-->
+            {% include "form_errors.html" %}<!--경고창-->
+            <div class="form-group">
+                <label for="username">사용자 이름</label>
+                <input type="text" class="form-control" name="username" id="username" value="{{ form.username.data or '' }}">
+            </div>
+            <div class="form-group">
+                <label for="password1">비밀번호</label>
+                <input type="password" class="form-control" name="password1" id="password1" value="{{ form.password1.data or '' }}">
+            </div>
+            <div class="form-group">
+                <label for="password2" >비밀번호 확인</label>
+                <input type="password" class="form-control" name="password2" id="password2" value="{{ form.password2.data or '' }}">
+            </div>
+            <div class="form-group">
+                <label for="email">이메일</label>
+                <input type="text" class="form-control" name="email" id="email" value="{{ form.email.data or '' }}">
+            </div>
+            <button type="submit" class="btn btn-primary">생성하기</button>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>
