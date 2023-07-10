@@ -130,7 +130,11 @@
         document.getElementById('page').value = 1;  // 검색버튼을 클릭할 경우 1페이지부터 조회한다.
         document.getElementById('searchForm').submit();
     });
-
+    const sel_option = document.querySelector(".so");
+        sel_option.addEventListener('change', function() {
+            document.getElementById('so').value = sel_option.options[sel_option.selectedIndex].value;
+            document.getElementById('page').value = 1;
+        });
     </script>
     {% endblock %}
 </body>
